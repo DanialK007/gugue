@@ -31,8 +31,8 @@ body {
 }
 
 .cutout-border {
-  filter: drop-shadow(0 0 0 rgb(96, 96, 96))
-    drop-shadow(-40 0 0 rgb(96, 96, 96)) drop-shadow(40 0 0 rgb(96, 96, 96));
+  filter: drop-shadow(0 0 0 rgb(140, 140, 140))
+    drop-shadow(-40 0 0 rgb(140, 140, 140)) drop-shadow(40 0 0 rgb(140, 140, 140));
 }
 
 .bg-primary {
