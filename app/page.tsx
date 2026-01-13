@@ -1,8 +1,11 @@
 import Hero from "@/components/Hero";
+import { Pointer } from "@/components/ui/Pointer";
 import Scroller from "@/components/ui/Scroller";
 function page() {
   return (
     <>
+      <Pointer className="fill-red-700 size-10 -rotate-78 active:scale-90" />
+
       <Hero />
 
       {/* second page */}

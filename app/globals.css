@@ -4,6 +4,31 @@
 /* enable `.dark` class support */
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  display: none;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+/* Firefox */
+html {
+  scrollbar-width: none;
+}
+
+a{
+  cursor: none !important;
+}
+
+/* IE / old Edge */
+body {
+  -ms-overflow-style: none;
+}
+
 body {
   /* background: var(--background);
   color: var(--foreground); */
@@ -32,7 +57,8 @@ body {
 
 .cutout-border {
   filter: drop-shadow(0 0 0 rgb(140, 140, 140))
-    drop-shadow(-40 0 0 rgb(140, 140, 140)) drop-shadow(40 0 0 rgb(140, 140, 140));
+    drop-shadow(-40 0 0 rgb(140, 140, 140))
+    drop-shadow(40 0 0 rgb(140, 140, 140));
 }
 
 .bg-primary {
