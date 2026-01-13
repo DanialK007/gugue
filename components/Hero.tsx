@@ -12,11 +12,13 @@ function Hero() {
   const twitterRef = useRef<LottieRefCurrentProps | null>(null);
 
   return (
-    <div className="p-2 bg-linear-to-b from-neutral-200 from-95% h-screen max-h-fit">
+    <div className="p-2 text-white dark:text-primary bg-linear-to-b from-neutral-200 dark:from-neutral-700/70 from-95% h-screen max-h-fit">
       <div className="h-220 max-h-full rounded-3xl relative bg-cover bg-center overflow-hidden">
-        <div className="absolute z-1 inset-0 rounded-3xl">
+        {/* bg */}
+        <div className="absolute z-1 inset-0 rounded-3xl dark:saturate-0 dark:brightness-40">
           <img src="bg.jpeg" alt="" className="size-full brightness-125" />
         </div>
+        {/* title */}
         <div className="absolute font-nerko top-0 left-0 w-full z-2 flex justify-center px-20 pt-28">
           <Scroller
             // markers={true}
@@ -26,7 +28,7 @@ function Hero() {
             startPercent={50}
             endPercent={0}
           >
-            <div className="text-8xl md:text-[12rem] font-black text-white">
+            <div className="text-8xl md:text-[12rem] font-black">
               Wint Thandar <span className="lg:hidden">Htun</span>
             </div>
           </Scroller>
@@ -40,16 +42,20 @@ function Hero() {
             startPercent={50}
             endPercent={0}
           >
-            <div className="text-8xl md:text-[12rem] font-black text-white px-20">
+            <div className="text-8xl md:text-[12rem] font-black px-20">
               Htun
             </div>
           </Scroller>
         </div>
+        {/* photo */}
         <div className="absolute pointer-events-none inset-0 z-3 bottom-0 flex items-end justify-center">
-          <img src="gugue.png" alt="" className="h-120 md:h-186" />
+          <img
+            src="gugue.png"
+            alt=""
+            className="h-120 md:h-186 dark:brightness-95"
+          />
         </div>
-
-        <div className="absolute z-11 bottom-0 right-0 p-3 md:p-5 flex gap-3">
+        <div className="absolute z-11 bottom-0 right-0 p-1 md:p-3 flex gap-3">
           <Scroller
             // markers={true}
             toX={200}
@@ -61,23 +67,27 @@ function Hero() {
           >
             <a
               href="#"
-              className="flex hover:scale-110 duration-300 bg-white border-2 border-black rounded-full"
-              onMouseEnter={() => {
-                facebookRef.current?.setDirection(1);
-                facebookRef.current?.play();
-              }}
-              onMouseLeave={() => {
-                facebookRef.current?.setDirection(-1);
-                facebookRef.current?.play();
-              }}
+              className="flex hover:scale-110 duration-300 bg-white dark:bg-primary dark:bg-neutral-200 border-2 border-black rounded-full"
             >
-              <Lottie
-                lottieRef={facebookRef}
-                animationData={facebookAnim}
-                loop={false}
-                autoplay={false}
-                className="size-8 md:size-9 pe-0.5 rounded-full"
-              />
+              <div
+                onMouseEnter={() => {
+                  facebookRef.current?.setDirection(1);
+                  facebookRef.current?.play();
+                }}
+                onMouseLeave={() => {
+                  facebookRef.current?.setDirection(-1);
+                  facebookRef.current?.play();
+                }}
+                className="dark:invert"
+              >
+                <Lottie
+                  lottieRef={facebookRef}
+                  animationData={facebookAnim}
+                  loop={false}
+                  autoplay={false}
+                  className="size-8 md:size-9 pe-0.5 rounded-full"
+                />
+              </div>
             </a>
           </Scroller>
           <Scroller
@@ -91,23 +101,27 @@ function Hero() {
           >
             <a
               href="#"
-              className="flex hover:scale-110 duration-300 bg-white border-2 border-black rounded-full"
-              onMouseEnter={() => {
-                instagramRef.current?.setDirection(1);
-                instagramRef.current?.play();
-              }}
-              onMouseLeave={() => {
-                instagramRef.current?.setDirection(-1);
-                instagramRef.current?.play();
-              }}
+              className="flex hover:scale-110 duration-300 bg-white dark:bg-primary dark:bg-neutral-200 border-2 border-black rounded-full"
             >
-              <Lottie
-                lottieRef={instagramRef}
-                animationData={instagramAnim}
-                loop={false}
-                autoplay={false}
-                className="size-8 md:size-9 p-0.5 rounded-full"
-              />
+              <div
+                onMouseEnter={() => {
+                  instagramRef.current?.setDirection(1);
+                  instagramRef.current?.play();
+                }}
+                onMouseLeave={() => {
+                  instagramRef.current?.setDirection(-1);
+                  instagramRef.current?.play();
+                }}
+                className="dark:invert"
+              >
+                <Lottie
+                  lottieRef={instagramRef}
+                  animationData={instagramAnim}
+                  loop={false}
+                  autoplay={false}
+                  className="size-8 md:size-9 p-0.5 rounded-full"
+                />
+              </div>
             </a>
           </Scroller>
           <Scroller
@@ -121,23 +135,27 @@ function Hero() {
           >
             <a
               href="#"
-              className="flex hover:scale-110 duration-300 bg-white border-2 border-black rounded-full"
-              onMouseEnter={() => {
-                twitterRef.current?.setDirection(1);
-                twitterRef.current?.play();
-              }}
-              onMouseLeave={() => {
-                twitterRef.current?.setDirection(-1);
-                twitterRef.current?.play();
-              }}
+              className="flex hover:scale-110 duration-300 bg-white dark:bg-primary dark:bg-neutral-200 border-2 border-black rounded-full"
             >
-              <Lottie
-                lottieRef={twitterRef}
-                animationData={twitterAnim}
-                loop={false}
-                autoplay={false}
-                className="size-8 md:size-9 p-0.5 translate-x-0.5 rounded-full"
-              />
+              <div
+                onMouseEnter={() => {
+                  twitterRef.current?.setDirection(1);
+                  twitterRef.current?.play();
+                }}
+                onMouseLeave={() => {
+                  twitterRef.current?.setDirection(-1);
+                  twitterRef.current?.play();
+                }}
+                className="dark:invert"
+              >
+                <Lottie
+                  lottieRef={twitterRef}
+                  animationData={twitterAnim}
+                  loop={false}
+                  autoplay={false}
+                  className="size-8 md:size-9 p-0.5 translate-x-0.5 rounded-full"
+                />
+              </div>
             </a>
           </Scroller>
         </div>

@@ -28,7 +28,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <LenisWrapper>{children}</LenisWrapper>
+        <div className="bg-white dark:bg-neutral-900">
+          <LenisWrapper>{children}</LenisWrapper>
+        </div>
       </body>
     </html>
   );

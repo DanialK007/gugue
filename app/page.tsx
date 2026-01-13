@@ -1,10 +1,15 @@
 import Hero from "@/components/Hero";
+import { AnimatedThemeToggler } from "@/components/ui/AnimatedThemeToggler";
 import { Pointer } from "@/components/ui/Pointer";
 import Scroller from "@/components/ui/Scroller";
 function page() {
   return (
     <>
-      <Pointer className="fill-red-700 size-10 -rotate-78 active:scale-90" />
+      <Pointer className="fill-red-600 dark:stroke-neutral-900 block z-99 size-10 -rotate-78 active:scale-90" />
+
+      <div className="fixed size-9 md:size-10 border-2 border-black rounded-full flex items-center justify-center dark:rotate-360 duration-300 bg-white dark:bg-primary text-black dark:text-white top-3 md:top-5 right-3 md:right-5 z-30">
+        <AnimatedThemeToggler />
+      </div>
 
       <Hero />
 
@@ -14,7 +19,7 @@ function page() {
           <img
             src="newspaper.png"
             alt="news"
-            className="size-full object-cover opacity-30 brightness-70"
+            className="size-full object-cover opacity-30 dark:opacity-10 dark:brightness-100 brightness-70"
           />
         </div>
         <div className="h-full overflow-hidden relative">
@@ -23,29 +28,29 @@ function page() {
               <img
                 src="tape.jpeg"
                 alt="tape"
-                className="h-32 md:h-58 rotate-20"
+                className="h-32 dark:brightness-75 md:h-58 rotate-20"
               />
             </Scroller>
           </div>
 
           <div className="absolute z-10 right-20 top-0">
             <Scroller fromY={-350} startPx={400} endPx={800}>
-              <img src="phone.jpeg" alt="phone" className="w-58" />
+              <img src="phone.jpeg" alt="phone" className="w-58 dark:brightness-75" />
             </Scroller>
           </div>
 
           <div className="rotate-20 absolute z-10 left-10 md:left-20 bottom-120 md:bottom-20">
             <Scroller fromX={-300} fromRotate={360} startPx={-300} endPx={-300}>
-              <img src="star.jpeg" alt="star" className="h-20 md:h-28" />
+              <img src="star.jpeg" alt="star" className="h-20 md:h-28 dark:brightness-75" />
             </Scroller>
           </div>
 
-          <div className="absolute z-10 me-8 md:me-0 left-0 bottom-0 w-full flex justify-center px-10">
+          <div className="absolute z-10 me-8 md:me-0 left-0 bottom-0 w-full flex justify-center dark:brightness-85 px-10">
             <Scroller fromY={300} startPx={-300} endPx={-300}>
               <img
                 src="guCam.jpeg"
                 alt="gu"
-                className="w-full md:w-110 cutout-border"
+                className="w-full md:w-110 cutout-border dark:cutout-border-dark"
               />
             </Scroller>
           </div>
@@ -61,7 +66,7 @@ function page() {
 
           <div className="absolute z-10 right-0 md:right-28 -bottom-5 md:bottom-20 scale-70 md:scale-100 rotate-10">
             <Scroller fromX={300} startPx={-300} endPx={-300}>
-              <div className="w-40 h-56 relative text-sm p-4 bg-white shadow-lg shadow-black/20">
+              <div className="w-40 h-56 relative text-sm p-4 bg-white text-black dark:bg-neutral-900 dark:text-white shadow-lg shadow-black/20">
                 <div className="font-schoolbell">
                   Aspiring architect with a soul for art and an eye for detail.
                   From the rhythm of music to the precision of a sketch, my work
