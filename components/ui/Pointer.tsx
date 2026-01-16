@@ -29,13 +29,13 @@ export function Pointer({
   const x = useMotionValue(0);
   const y = useMotionValue(0);
   const smoothX = useSpring(x, {
-    stiffness: 1200,
+    stiffness: 1000,
     damping: 60,
     mass: 0.2,
   });
 
   const smoothY = useSpring(y, {
-    stiffness: 1200,
+    stiffness: 1000,
     damping: 60,
     mass: 0.2,
   });

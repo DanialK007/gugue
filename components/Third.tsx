@@ -205,7 +205,8 @@ const booksList = [
 function Third() {
   return (
     <div className="bg-neutral-200 dark:bg-neutral-700 p-2">
-      <div className="rounded-3xl border-2 border-black bg-[url('/shelf.png')] bg-repeat bg-contain grid pt-12 pb-20 md:py-26 gap-8 md:gap-16 overflow-x-hidden">
+      <div className="relative rounded-3xl border-2 border-black bg-[url('/shelf.png')] bg-repeat bg-contain grid pt-12 pb-20 md:py-26 gap-8 md:gap-16 overflow-x-hidden">
+        <div className="absolute inset-0 z-0 dark:bg-black/75"></div>
         <Caro books={booksList.slice(0, 9)} />
         <Caro books={booksList.slice(9, 18)} />
         <Caro books={booksList.slice(18, 26)} />
@@ -227,7 +228,7 @@ function Caro({ books }: { books: typeof booksList }) {
               <img
                 src={book.coverImage ?? "book.png"}
                 alt={book.title}
-                className="h-30 md:h-46"
+                className="h-30 md:h-46 dark:brightness-90"
               />
               <div className="absolute inset-0 -z-1 bg-black translate-x-2 translate-y-2"></div>
             </div>
