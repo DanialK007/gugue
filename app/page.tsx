@@ -10,9 +10,7 @@ function page() {
     <>
       <Pointer className="fill-red-600 dark:stroke-neutral-900 block z-99 size-10 -rotate-78 active:scale-90" />
 
-      <div className="fixed size-9 md:size-10 border-2 border-black rounded-full flex items-center justify-center dark:rotate-360 duration-300 bg-white dark:bg-primary text-black dark:text-white top-3 md:top-5 right-3 md:right-5 z-30">
-        <AnimatedThemeToggler />
-      </div>
+      <AnimatedThemeToggler className="fixed size-9 md:size-10 border-2 border-black rounded-full flex items-center justify-center dark:rotate-360 duration-300 bg-white dark:bg-primary text-black dark:text-white top-3 md:top-5 right-3 md:right-5 z-30" />
 
       <Hero />
 

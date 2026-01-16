@@ -10,6 +10,7 @@ import {
 } from "motion/react";
 
 import { cn } from "@/lib/utils";
+import { s } from "motion/react-client";
 
 /**
  * A custom pointer component that displays an animated cursor.
@@ -27,8 +28,17 @@ export function Pointer({
 }: HTMLMotionProps<"div">): React.ReactNode {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
-  // const smoothX = useSpring(x, { stiffness: 300, damping: 40 });
-  // const smoothY = useSpring(y, { stiffness: 300, damping: 40 });
+  const smoothX = useSpring(x, {
+    stiffness: 1200,
+    damping: 60,
+    mass: 0.2,
+  });
+
+  const smoothY = useSpring(y, {
+    stiffness: 1200,
+    damping: 60,
+    mass: 0.2,
+  });
   const [isActive, setIsActive] = useState<boolean>(false);
   const [isPressed, setIsPressed] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -87,8 +97,8 @@ export function Pointer({
           <motion.div
             className="pointer-events-none fixed z-50 transform-[translate(-50%,-50%)]"
             style={{
-              top: y,
-              left: x,
+              top: smoothY,
+              left: smoothX,
               ...style,
             }}
             initial={{
