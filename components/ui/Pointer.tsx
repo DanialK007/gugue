@@ -27,8 +27,8 @@ export function Pointer({
 }: HTMLMotionProps<"div">): React.ReactNode {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
-  const smoothX = useSpring(x, { stiffness: 360, damping: 50 });
-  const smoothY = useSpring(y, { stiffness: 360, damping: 50 });
+  const smoothX = useSpring(x, { stiffness: 300, damping: 40 });
+  const smoothY = useSpring(y, { stiffness: 300, damping: 40 });
   const [isActive, setIsActive] = useState<boolean>(false);
   const [isPressed, setIsPressed] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);

@@ -5,11 +5,13 @@ import Lottie, { LottieRefCurrentProps } from "lottie-react";
 import facebookAnim from "@/public/Facebook/facebook.json";
 import instagramAnim from "@/public/Instagram/instagram.json";
 import twitterAnim from "@/public/Twitter/twitter.json";
+import mailAnim from "@/public/Mail/mail.json";
 
 function Hero() {
   const facebookRef = useRef<LottieRefCurrentProps | null>(null);
   const instagramRef = useRef<LottieRefCurrentProps | null>(null);
   const twitterRef = useRef<LottieRefCurrentProps | null>(null);
+  const mailRef = useRef<LottieRefCurrentProps | null>(null);
 
   return (
     <div className="p-2 text-white dark:text-primary bg-linear-to-b from-neutral-200 dark:from-neutral-700/70 from-95% h-screen max-h-fit">
@@ -56,6 +58,42 @@ function Hero() {
           />
         </div>
         <div className="absolute z-11 bottom-0 right-0 p-1 md:p-3 flex gap-3">
+          {/* mail */}
+          <Scroller
+            // markers={true}
+            toX={200}
+            toRotate={480}
+            startPx={-50}
+            endPx={800}
+            startPercent={70}
+            endPercent={0}
+          >
+            <a
+              href="#"
+              className="flex hover:scale-110 duration-300 bg-white dark:bg-primary dark:bg-neutral-200 border-2 border-black rounded-full"
+            >
+              <div
+                onMouseEnter={() => {
+                  mailRef.current?.setDirection(1);
+                  mailRef.current?.play();
+                }}
+                onMouseLeave={() => {
+                  mailRef.current?.setDirection(-1);
+                  mailRef.current?.play();
+                }}
+                className="dark:invert"
+              >
+                <Lottie
+                  lottieRef={mailRef}
+                  animationData={mailAnim}
+                  loop={false}
+                  autoplay={false}
+                  className="size-8 md:size-9 rounded-full"
+                />
+              </div>
+            </a>
+          </Scroller>
+          {/* facebook */}
           <Scroller
             // markers={true}
             toX={200}
@@ -90,6 +128,7 @@ function Hero() {
               </div>
             </a>
           </Scroller>
+          {/* instagram */}
           <Scroller
             // markers={true}
             toX={200}
@@ -124,6 +163,7 @@ function Hero() {
               </div>
             </a>
           </Scroller>
+          {/* twitter */}
           <Scroller
             // markers={true}
             toX={200}
