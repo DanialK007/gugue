@@ -31,7 +31,7 @@ function Hero() {
             endPercent={0}
           >
             <div className="text-8xl md:text-[12rem] font-black">
-              Wint Thandar <span className="lg:hidden">Htun</span>
+              Wint thandar <span className="lg:hidden">Htun</span>
             </div>
           </Scroller>
         </div>

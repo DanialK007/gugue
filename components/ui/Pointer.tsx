@@ -27,8 +27,8 @@ export function Pointer({
 }: HTMLMotionProps<"div">): React.ReactNode {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
-  const smoothX = useSpring(x, { stiffness: 300, damping: 40 });
-  const smoothY = useSpring(y, { stiffness: 300, damping: 40 });
+  // const smoothX = useSpring(x, { stiffness: 300, damping: 40 });
+  // const smoothY = useSpring(y, { stiffness: 300, damping: 40 });
   const [isActive, setIsActive] = useState<boolean>(false);
   const [isPressed, setIsPressed] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -87,8 +87,8 @@ export function Pointer({
           <motion.div
             className="pointer-events-none fixed z-50 transform-[translate(-50%,-50%)]"
             style={{
-              top: smoothY,
-              left: smoothX,
+              top: y,
+              left: x,
               ...style,
             }}
             initial={{
