@@ -54,7 +54,7 @@ function Hero() {
           <img
             src="gugue.png"
             alt=""
-            className="h-120 md:h-186 dark:brightness-95"
+            className="h-120 max-h-screen md:h-186 dark:brightness-95"
           />
         </div>
         <div className="absolute z-11 bottom-0 right-0 p-1 md:p-3 flex gap-3">
